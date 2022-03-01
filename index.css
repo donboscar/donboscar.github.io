@@ -1,8 +1,10 @@
-/* Base styles */
 
 
+  .formula {
+      text-align: center;
+  }
 
-a strong {
+  a strong {
     color: inherit;
   }
 
