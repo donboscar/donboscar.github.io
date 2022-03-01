@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- add ons -->
+    <meta name="description" content="SEO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour de diseño</title>
+    <!-- CSS -->
+    
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tour.css') }}">
+    
+
+
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781604331769_9781604331769_lg.jpg" alt="El logo no carga">
+        <h1>Diseño de una página web</h1>
+        <p id="cant-see">
+          Oscar <a href="https://i.insider.com/60d0e3c9db3f80001848d09f?width=1000&format=jpeg&auto=webp" target="_blank">Hubble</a>
+        </p>
+    </header>
+  
+      <main>
+
+        <!-- start -->
+
+        <section id="start">
+          <p>Digamos que quieres construir una página web...</p>
+          <p>Qué es lo <a class="step" data-step="0" href="#primero">primero</a> que tienes que hacer?</p>
+        </section>
+
+        <!-- primero -->
+
+        <section id="primero">
+            <h2>~ 1º ~</h2>
+            <p>Lo primero y más importante es el <strong>contenido</strong> y la <em>función</em> de la web. Una vez decidido podemos empezar a darle vida y apariencia.</p>
+            <p>Vamos a asumir que ya has pensado en el contenido de tu página web, lo primero es crear un documeto <code>style.css</code>. 
+                ¿Qué es lo primero que podemos <a class="step" data-step="1" href="#centrar">arreglar</a>?</p>
+        </section>
+
+        <!-- centrar -->
+
+        <section id="centrar">
+            <h2>Centrar</h2>
+            <p>Queda muy feo ver todo el contenido pegado a la <strong>izquierda</strong> de la pestaña . Lo arreglamos centrando el contenido y limitando el número de caracteres por linea.</p>
+            <pre><span class="selector">body</span> {
+    <span class="attribute">margin</span>: <span class="number">0</span> auto;
+    <span class="attribute">max-width</span>: <span class="number">50</span><span class="unit">em</span>;
+}</pre>
+            <p>Una vez formateado elposicionamiento del <em>contenido</em>, es hora de formatear <a class="step" data-step="2" href="#font">el propio texto</a>.</p>
+          </section>
+
+          <!-- font -->
+
+          <section id="font">
+            <h2>Font</h2>
+            <p>Por defecto, el navegador usa <code>"Times"</code>, si no es el estilo que estás buscando, puedes camabiar. Cambiar a <strong>sans-serif</strong>, <code>"Helvetica"</code> o <code>"Arial"</code>.
+                En este caso importamos tres en orden de preferencia, si el primero falla pasa al segundo y así sucesivamente. Por lo general se suele acabar en un estilo como <code>"serif"</code> que es compatible con todos los navegadores.</p>
+            <pre><span class="selector">body</span> {
+    <span class="attribute">font-family</span>: <span class="string">"Helvetica"</span>, <span class="string">"Arial"</span>, sans-serif;
+}</pre>
+            <p>Vale, ya hemos conseguido una <em>bonita</em> tipografía, pero toca hacerlo más <a class="step" data-step="3" href="#espaciado-interlineado">legible</a>.</p>
+          </section>
+
+          <!-- espaciado-interlineado -->
+
+          <section id="espaciado-interlineado">
+            <h2>Espacios e Interlineado</h2>
+            <p>Los espacios de un documento tienen un impacto directo sobre su <strong>legibilidad</strong>. Espacio en <em>márgenes</em> y <em>entre lineas</em> la comprensión y velocidad de lectura de página.</p>
+    <pre><span class="selector">body</span> {
+      <span class="attribute">line-height</span>: <span class="number">1.5</span>;
+      <span class="attribute">padding</span>: <span class="number">4</span><span class="unit">em</span> <span class="number">1</span><span class="unit">em</span>;
+    }
+    
+    <span class="selector">h2</span> {
+      <span class="attribute">margin-top</span>: <span class="number">1</span><span class="unit">em</span>;
+      <span class="attribute">padding-top</span>: <span class="number">1</span><span class="unit">em</span>;
+    }</pre>
+            <p>Hemos mejorado mucho el formato del documento, pero algo de <a class="step" data-step="4" href="#color-web">color</a> no haría daño.</p>
+          </section>
+    
+            <!-- color-web -->
+
+          <section id="color-web">
+            <h2> Porque sí, porque es la moda </h2>
+            <p>Es muy frecuente en la Web ver el contenido escrito en diferentes tonos de gris.</p>
+    <pre><span class="selector">body</span> {
+      <span class="attribute">color</span>: <span class="number">#555</span>;
+    }</pre>
+            <p>Pero, para seguir manteniendo un buen nivel de <strong>contraste</strong>, escogemos un tono más oscuro en los encabezados y palabras <strong>importantes</strong>.</p>
+    <pre><span class="selector">h1</span>,
+    <span class="selector">h2</span>,
+    <span class="selector">strong</span> {
+      <span class="attribute">color</span>: <span class="number">#333</span>;
+    }</pre>
+            <p>Hemos separado los fragmentos de código del resto del escrito con una tipografía diferente y con colores específicos. Podemos ir un paso más <a class="step" data-step="5" href="#codigo">allá</a>.</p>
+          </section>
+
+           <!-- codigo -->
+    
+          <section id="codigo">
+            <h2>Balance</h2>
+            <p>Hemos añadido un fondo de contraste detrás de los fragmentos de código:</p>
+    <pre><span class="selector">code</span>,
+    <span class="selector">pre</span> {
+      <span class="attribute">background</span>: <span class="number">#eee</span>;
+    }
+    
+    <span class="selector">code</span> {
+      <span class="attribute">padding</span>: <span class="number">2</span>px <span class="number">4</span>px;
+      <span class="attribute">vertical-align</span>: text-bottom;
+    }
+    
+    <span class="selector">pre</span> {
+      <span class="attribute">padding</span>: <span class="number">1</span>em;
+    }</pre>
+            <p>Podemos perseguir un <a class="step" data-step="6" href="#tema-cromatico">tema cromático</a> uniforme por toda la Web.</p>
+          </section>
+
+          <!-- tema-cromatico -->
+    
+          <section id="tema-cromatico">
+            <h2>Tema Cromático</h2>
+            <p>La mayoría de empresas, como un partido político, tienen un <strong>color representativo</strong> que actúa como acento visual.
+                 En una página Web, esto puede ser un color diferente en los <strong>links</strong>.</p>
+    <pre><span class="selector">a</span> {
+      <span class="attribute">color</span>: <span class="number">#e81c4f</span>;
+    }</pre>
+            <p>Añadimos unos <a class="step" data-step="7" href="#colores-secundarios">colores secundarios</a>.</p> <!-- fijaos en el en los bordes del código -->
+          </section>
+
+          <!-- colores-secundarios -->
+    
+          <section id="colores-secundarios">
+            <h2>Colores Secundarios</h2>
+            <p>El color de la Web ya está cumplido. Hemos añadido sombras <em>sutiles</em> en los bordes y en el fondo.</p>
+    <pre><span class="selector">body</span> {
+      <span class="attribute">color</span>: <span class="number">#566b78</span>;
+    }
+    
+    <span class="selector">code</span>,
+    <span class="selector">pre</span> {
+      <span class="attribute">background</span>: <span class="number">#f5f7f9</span>;
+      <span class="attribute">border-bottom</span>: <span class="number">1</span><span class="unit">px</span> solid <span class="number">#d8dee9</span>;
+      <span class="attribute">color</span>: <span class="number">#a7adba</span>;
+    }
+    
+    <span class="selector">pre</span> {
+      <span class="attribute">border-left</span>: <span class="number">2</span><span class="unit">px</span> solid <span class="number">#69c</span>;
+    }</pre>
+            <p>Ahora he decidido que quiero una tipografía <a class="step" data-step="8" href="#custom-font">diferente</a>...</p>
+          </section>
+
+          <!-- custom font -->
+    
+          <section id="custom-font">
+            <h2>Roboto</h2>
+            <p>Esta es una tipografía típica de Android y le da a la Web algo <strong>propio</strong>.</p>
+            <p>También puedes incrustar tu propia letra o solicitar un servicio online <a href="https://typekit.com" target="_blank">Typekit</a>, por ejemlo <code>"Roboto"</code> de <a href="https://fonts.google.com" target="_blank">Google Fonts</a> service:</p>
+    <pre><span class="keyword">@import</span> <span class="string">'https://fonts.googleapis.com/css?family=Roboto:300,400,500'</span>;
+    
+    <span class="selector">body</span> {
+      <span class="attribute">font-family</span>: <span class="string">"Roboto"</span>, <span class="string">"Helvetica"</span>, <span class="string">"Arial"</span>, sans-serif;
+    }</pre>
+            <p>Suficiente formateo de <em>texto</em>, toca añadir <a class="step" data-step="9" href="#imagenes">mil palabras</a>...</p>
+          </section>
+
+          <!-- imagenes -->
+    
+          <section id="imagenes">  <!-- hablar compatibilidad de fuentes de texto -->
+            <h2>
+              <img src="https://c.ndtvimg.com/2022-02/8ufruokg_hitler-putin-cartoon-650_625x300_24_February_22.jpg" alt="Esto no es un meme">
+            </h2>
+            <p>El apartado gráfico de una página Web es fundamental, no solo como ornamento sino pudiendo ser parte principal del mensaje a transmitir.</p>
+            <p>Por último, vamos a mejorar el encabezado con una <strong>imagen de fondo</strong> sacada de <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+    <pre><span class="selector">header</span> {
+      <span class="attribute">background-color</span>: <span class="number">#263d36</span>;
+      <span class="attribute">background-image</span>: url(<span class="string">"header.jpg"</span>);
+      <span class="attribute">background-position</span>: center top;
+      <span class="attribute">background-repeat</span>: no-repeat;
+      <span class="attribute">background-size</span>: cover;
+      <span class="attribute">line-height</span>: <span class="number">1.2</span>;
+      <span class="attribute">padding</span>: <span class="number">10</span><span class="unit">vw</span> <span class="number">2</span><span class="unit">em</span>;
+      <span class="attribute">text-align</span>: center;
+    }</pre>
+            <p>Añadimos un <strong>logo</strong></p>
+    <pre><span class="selector">header img</span> {
+      <span class="attribute">display</span>: inline-block;
+      <span class="attribute">height</span>: <span class="number">120</span><span class="unit">px</span>;
+      <span class="attribute">vertical-align</span>: top;
+      <span class="attribute">width</span>: <span class="number">120</span><span class="unit">px</span>;
+    }</pre>
+            <p>Cambiamos el encabezado a blanco y  creamos un botón</p>
+    <pre><span class="selector">header h1</span> {
+      <span class="attribute">color</span>: white;
+      <span class="attribute">font-size</span>: <span class="number">2.5</span><span class="unit">em</span>;
+      <span class="attribute">font-weight</span>: <span class="number">300</span>;
+    }
+    
+    <span class="selector">header a</span> {
+      <span class="attribute">border</span>: <span class="number">1</span><span class="unit">px</span> solid <span class="number">#e81c4f</span>;
+      <span class="attribute">border-radius</span>: <span class="number">290486</span><span class="unit">px</span>;
+      <span class="attribute">color</span>: white;
+      <span class="attribute">font-size</span>: <span class="number">0.6</span><span class="unit">em</span>;
+      <span class="attribute">letter-spacing</span>: <span class="number">0.2</span><span class="unit">em</span>;
+      <span class="attribute">padding</span>: <span class="number">1</span><span class="unit">em</span> <span class="number">2</span><span class="unit">em</span>;
+      <span class="attribute">text-transform</span>: uppercase;
+      <span class="attribute">text-decoration</span>: none;
+      <span class="attribute">transition</span>: none <span class="number">200</span><span class="unit">ms</span> ease-out;
+      <span class="attribute">transition-property</span>: color, background;
+    }
+    
+    <span class="selector">header a:hover</span> {
+      <span class="attribute">background</span>:  <span class="number">#e81c4f</span>;
+      <span class="attribute">color</span>: white;
+    }</pre>
+            <p>Y <a href="#header">C'est fini</a>!</p>
+            <p>Hemos creado una web <strong>"estática"</strong>.
+                <br><br>
+
+
+                <!-- END -->
+                
+
+                *Como añadir <a class="step" data-step="10" href="#share">notación matemática</a>.</p>
+          </section>
+              
+          <section id="share">
+            <h2>Ecuaciones</h2>
+            <p>
+              He discutido,en la memoria, las <strong>posibles soluciones</strong> a la hora de <strong>representar caracteres </strong> no soportados por HTML.
+            </p>
+            <p>La forma más sencilla y ordenada es usar archivos en formato<strong>.svg</strong>, un formato vectorial como .pdf.</p>
+           
+
+            <img src="love.svg" alt="El logo no carga" height="60" width="50">
+          
+
+  
+            <p>Gracias por la atención</p>
+          </section>
+
+    
+          <footer>
+            <a class="button" href="https://google.com" target="_blank">disfruten</a>
+          </footer>
+        </main>
+
+        <a id="visited" href="#share">Looks like you've already been here. Jump to the end?</a>
+
+    
+
+
+
+
+
+
+
+
+
+    
+        <script type="text/javascript">
+            var steps = document.querySelectorAll('.step');
+            var body = document.querySelector('body');
+            var html = document.querySelector('html');
+            
+            for (var i=0; i < steps.length; i++) {
+              var element = steps[i];
+              element.onclick = function(event) {
+                var number = this.dataset.step;
+                var target = this.href;
+                addStep(number, target);
+              }
+            };
+            
+            function removeVisited() {
+              if (document.getElementById('visited')) {
+                body.removeChild(document.getElementById('visited'));
+              }
+            }
+            
+            function addStep(number, target) {
+              html.className += ' step' + number;
+            
+              removeVisited();
+            
+              if (target !== '') {
+                var id = target.split('#')[1];
+                document.getElementById(id).className = 'animate';
+              }
+            
+              if (number === '7') {
+                loadGoogleFont();
+              }
+            }
+            
+            visited.onclick = function() {
+              loadGoogleFont();
+              for (var i=0; i < 11; i++) {
+                html.className += ' step' + i;
+              }
+              removeVisited();
+            }
+            
+            WebFontConfig = {
+              google: {
+                families: ['Roboto:300,400,500']
+              }
+            };
+            
+            function loadGoogleFont() {
+              (function(d) {
+                var wf = d.createElement('script'), s = d.scripts[0];
+                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+                s.parentNode.insertBefore(wf, s);
+              })(document);
+            }
+            </script>
+
+
+</body>
+</html>
